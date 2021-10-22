@@ -1,0 +1,178 @@
+\documentclass[a4paper]{article}
+
+\input{preamble.tex}
+\input{glossaires_et_symb.tex}
+
+\makeindex
+\final
+\begin{document}
+\thispagestyle{empty}
+\large
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabela}
+\pagenumbering{roman}
+
+\input{titlepage.tex}
+
+\newpage{ \pagestyle{empty} \qquad\newpage}
+\conteudo
+\newpage
+\printglossary[type=\acronymtype,title=Lista de Acrônimos]
+\phantomsection\addcontentsline{toc}{section}{Lista de Acrônimos}
+\newpage
+
+\pagenumbering{arabic}
+\section{Resumo}
+
+O objetivo deste documento é de brevemente resumir o trabalho
+realizado pelo aluno Rafael Accácio Nogueira durante seu estágio
+obrigatório na equipe de Machine Learning da empresa Stone Pagamentos,
+uma adquirente de cartão de crédito, que realiza o aluguel
+de máquinas de cartão de crédito, também conhecidas como \gls{POS}.
+Seus clientes são dos mais variados, tanto em questão de escala quanto
+de tipo de comércio. De um pequeno estabelecimento como uma padaria a
+até uma cadeia de supermercados, ou postos de gasolina entre outros
+tipos de estabelecimento A função desempenhada na empresa foi no
+desenvolvimento de software tendo feitos contribuições para alguns
+projetos da equipe, aumentando o número de funcionalidades do projeto,
+como controle de acesso, por exemplo. Dentro do objetivo principal
+está descrever as tarefas desempenhas e as detalhando sempre que
+possível, explicando os projetos, o que com eles foi aprendido (as
+tecnologias e as metodologias), o processo de aprendizagem e como esse
+aprendizado contribuiu para a formação de um engenheiro mais
+multidisciplinar.  Além de, é claro, mostrar as dificuldades
+encontradas durante o período, e que foi feito para serem
+ultrapassadas e como.
+
+~\\
+Palavras-chave:
+\begin{itemize}
+\item Adquirente
+\item Big Data
+\item Análise de Dados
+\item Banco de Dados
+\item Controle de Acesso
+\end{itemize}
+
+\pagebreak
+\section{Introdução}
+Este relatório é dividido em 4 partes : Fundamentos Teóricos e
+Práticos, Resultados, Discussão, Conclusão.
+
+Primeiro os fundamentos teóricos e práticos para o
+desenvolvimento dos projetos são apresentados. Depois os resultados
+obtidos são indicados. Na sessão seguinte é feita uma pequena
+discussão sobre esses resultados e na conclusão o que foi levado desse
+estágio para a formação como engenheiro.
+
+\section{Fundamentos Teóricos e Práticos}
+A maior parte dos fundamentos teóricos requeridos para a execução da função
+desempenhada no estágio, foram adquiridos basicamente a partir das
+matérias cursadas na faculdade, Algoritmos de Programação e Linguagens
+de Programação, cursadas nos dois primeiros períodos da
+faculdade, onde o básico de programação foi aprendido em diversas
+linguagens possibilitando o fácil aprendizado de outras sintaxes.
+
+Outros fundamentos teóricos tiveram que ser aprendidos na própria
+empresa, como por exemplo alguns fundamentos sobre mercado financeiro
+e o funcionamento do ciclo de transações em um pagamento usando cartão
+de crédito, que possui como atores o portador do cartão de crédito (cliente do
+estabelecimento), o estabelecimento, a adquirente, a bandeira do
+cartão de crédito e o Emissor (geralmente um banco).
+
+Nas primeiras semanas, os fundamentos teóricos do funcionamento da
+equipe e das linguagens, softwares e ferramentas utilizadas para a realização dos projetos foram
+ensinados pelo orientador do estágio e outros membros da equipe, além
+de um curso de Scala disponibilizado para o aprendizado da sintaxe da
+linguagem.
+
+Programas, Linguagens e Ferramentas utilizados durante o estágio:
+
+\begin{itemize}
+\item IntelliJ IDEA
+\item SQL Management Studio
+\item Postman
+\item RabbitMQ
+\item Grafana
+\item Kafka
+\end{itemize}
+
+Alguns outros programas foram utilizados como alternativas para alguns
+destes supracitados para Linux a fim de aumentar o aprendizado no tema, alguns deles
+são:
+\begin{itemize}
+\item Emacs
+\item DBeaver 
+\item curl
+\item Insomnia REST Client
+\end{itemize}
+\pagebreak
+\section{Resultados} 
+Alguns dos resultados foram pequenas melhorias na aplicação Zephyros CEP, que
+é utilizada como infraestrutura para o trânsito de informações de
+transações entre outras utilizadas por basicamente todas as outras
+aplicações da equipe.
+
+Outro resultado foi a implementação de regras de filtragem de Clientes da empresa
+presente na aplicação Ogma-Rules, para uso posterior por outras
+equipes a fim de verificar clientes em situação de churn ou pré-churn,
+a fim de tê-los como alvo, para combater a saída destes mesmos
+clientes da empresa. Churn é
+a nomenclatura dada para um cliente que deixa de utilizar por
+quaisquer motivos os \gls{POS} da empresa enquanto o contrato ainda está
+vigente, esse hiato entre utilizações pode ser um indicativo de uma
+eventual saída, que visa ser combatida, através da conversa com o cliente para assim
+melhor entendê-lo e melhor atender suas expectativas quanto a empresa.
+
+Além disso outro resultado é o controle de acesso de usuários
+para a aplicação Odin, que é usado para visualização de transações em
+tempo real usando Grafana para fazer um dashboard para plotar gráficos
+e cartões indicativos dos dados. Esse controle de acesso foi criado
+utilizando alto grau de generalismo de modo que no futuro pode ser
+utilizado até mesmo por outras aplicações, tanto as correntes quanto
+as futuras. 
+
+Um outro resultado embora pequeno foi o desenvolvimento de novas
+funções da biblioteca gim-scala-client, que é um wrapper do GIM em
+scala, possibilitando a gerência de usuários e recursos das
+aplicações a partir do GIM, ferramenta da empresa para autenticação de
+usuários e aplicações.
+
+Todos os projetos foram feitos em Scala, usando a ferramenta Git para gestão de
+versão dos projetos, sendo utilizado um repositório privado no Github
+da empresa.
+
+\section{Discussão}
+
+Embora alguns dos conhecimentos utilizados para as tarefas bases foram
+aprendidos em poucas matérias, as vezes visto somente em algumas
+eletivas, alguns conhecimentos aprendidos em matérias como cálculos,
+álgebra linear, lógica matemática, físicas, otimização e até mesmo
+Desenho de Engenharia foram uteis para resolução de alguns
+problemas. Logo, esse período do estágio ajudou a mostrar uma outra
+faceta de onde e como um Engenheiro de Controle e Automação é capaz de
+trabalhar, além de uma experiência em uma empresa de uma área nem
+sempre muito comentada durante o curso (mercado financeiro).
+
+Algumas dificuldades foram encontradas durante o processo, uma vez que
+certos temas não haviam sido explicitados durante as aulas, por serem
+muito específicos tanto para a área do mercado financeiro quanto para
+o desenvolvimento de aplicações. Essas dificuldades foram vencidas ao
+utilizar fontes de pesquisa como a internet, livros que foram
+disponibilizados pelos companheiros de equipe e é claro sempre que
+possível através das interações com os outros membros da equipe mais
+experientes.
+
+\section{Conclusão}
+
+O período serviu para aumentar o aprendizado de métodos e técnicas
+utilizadas no mercado, assim como ferramentas utilizadas para Big Data
+e Data Science, que podem ser utilizados também para controle de Smart
+Grids entre outras coisas, tão pedidos no mercado atual onde
+basicamente todos os fluxos de dados são massivos, precisando assim de
+ferramentas capazes de suportá-los como Spark, Flink e etc para
+processamento desses dados que geralmente vêm em batelada e o fluxo de
+dados distribuídos provenientes de muitos pontos diferentes espalhados
+pelo planeta.
+
+\end{document}
